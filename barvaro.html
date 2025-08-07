@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Barvaro Project | My Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="/Icon.png" type="/image.png" />
+  <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" />
+</head>
+<body class="project">
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="logo.png" alt="Logo" height="40" />
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="/about.html">About Me</a></li>
+          <li><a href="/product-design.html">Product Design</a></li>
+          <li><a href="/graphic design.html"><b>Graphic Design</b></a></li>
+          <li><a href="/ux-ui.html">UX/UI</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="project-detail">
+  <div class="project-container">
+    
+    <!-- Image Viewer -->
+<div class="project-images">
+  <div class="main-image">
+    <img id="mainPreview" src="/images/barvaro_Coaster_Mockup.png" alt="Main Barvaro image">
+  </div>
+
+  <div class="thumbnail-gallery">
+    <img src="/images/barvaro_Coaster_Mockup.png" alt="logo mockup" class="active" onclick="setMainImage(this)">
+    <img src="/images/barvaro_fachada_mockup.png" alt="fachada" onclick="setMainImage(this)">
+    <img src="/images/barvaro_typography_aplication.png" alt="typhography" onclick="setMainImage(this)">
+    <img src="/images/baarvaro_logo Variants.png" alt="logo variants" onclick="setMainImage(this)">
+  </div>
+</div>
+
+
+    <!-- Description & Skills -->
+    <div class="project-info">
+      <h1>Barvaro</h1>
+      <p class="project-subtitle">Colombian Coffee Brand and Packaging Design</p>
+      <p>
+        Barvaro is a Bogota Coffee shop brand. identity and packaging concept for a coffee startup.
+        From the design perspective, we aim to have a clean and modern color palet playing with the clear wood
+        finishing of the phisical space.<br>
+      
+        The design emphasizes authenticity and uses as main tools the photography and typhography as the visual keys of the brand.
+        It balances bold typography with clean layouts and uses warm, earthy colors inspired by the beer garden spaces.
+        My rol here went from conceptualizing to the execution of the idea having as a final result a brand guideline of the brand,
+        the menu and the packaging dieline.
+
+      </p>
+      <h3>Skills & Tools Used</h3>
+      <ul class="project-skills">
+        <li>Brand Design</li>
+        <li>Packaging Design</li>
+        <li>Illustrator</li>
+        <li>Photoshop</li>
+        <li>Mockup Rendering</li>
+        <li>Conceptualization</li>
+      </ul>
+    </div>
+
+  </div>
+</main>
+
+
+  <footer>
+    <div class="footer-container">
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/juan-quintero96/" target="_blank"><i class="lab la-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/jcquinteroom_ph/" target="_blank"><i class="lab la-instagram"></i></a>
+        <a href="https://www.behance.net/juanCa96/" target="_blank"><i class="lab la-behance"></i></a>
+      </div>
+      <p>Contact: juancquinteroma@gmail.com</p>
+      <p>&copy; 2025 Juan Quintero. All rights reserved.</p>
+    </div>
+  </footer>
+ <script>
+  function setMainImage(thumb) {
+    const main = document.getElementById('mainPreview');
+    main.src = thumb.src;
+
+    // Remove active class from all thumbnails
+    const thumbnails = document.querySelectorAll('.thumbnail-gallery img');
+    thumbnails.forEach(img => img.classList.remove('active'));
+
+    // Add active to clicked one
+    thumb.classList.add('active');
+  }
+
+  // Lightbox preview on click
+  document.addEventListener("DOMContentLoaded", () => {
+    const mainImage = document.getElementById("mainPreview");
+    mainImage.addEventListener("click", () => {
+      const src = mainImage.src;
+      const lightbox = document.createElement("div");
+      lightbox.classList.add("lightbox");
+      lightbox.innerHTML = `<img src="${src}" alt="Full preview"><span class="close-btn">&times;</span>`;
+      document.body.appendChild(lightbox);
+
+      document.querySelector(".close-btn").onclick = () => {
+        lightbox.remove();
+      };
+
+      lightbox.onclick = (e) => {
+        if (e.target === lightbox) lightbox.remove();
+      };
+    });
+  });
+</script>
+
+</body>
+</html>
