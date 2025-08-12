@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Title | My Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="/Icon.png" type="image/png" />
+  <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" />
+</head>
+<body class="project">
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="logo.png" alt="Logo" height="40" />
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="/about.html">About Me</a></li>
+          <li><a href="/product-design.html"><b>Product Design</b></a></li>
+          <li><a href="/graphic design.html">Graphic Design</a></li>
+          <li><a href="/ux-ui.html">UX/UI</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="project-detail">
+    <div class="project-container">
+      <!-- Main Image + Thumbnails -->
+      <div class="project-images">
+        <div class="main-image">
+          <img id="mainPreview" src="/images/newprint render packaging-03.png" alt="Packaging render" />
+        </div>
+
+        <div class="thumbnail-gallery">
+          <img src="/images/newprint render packaging-03.png" alt="Packaging render" class="active" onclick="setMainImage(this)" />
+          <img src="/images/newprint render 1-02.png" alt="render packaging" onclick="setMainImage(this)" />
+          <img src="/images/newprint render 1-01.png" alt="render" onclick="setMainImage(this)" />
+          <img src="/images/Voronoi moodboard.jpg" alt="moodboard" onclick="setMainImage(this)" />
+          <img src="/images/Voronoi service system.jpg" alt="diagram of service" onclick="setMainImage(this)" />
+          <img src="/images/Voronoi business model.jpg" alt="diagram of business model" onclick="setMainImage(this)" />
+          <img src="/images/Voronoi user persona.jpg" alt="User persona" onclick="setMainImage(this)" />
+          <img src="/images/Voronoi value chain.jpg" alt="value chain" onclick="setMainImage(this)" />
+        </div>
+      </div>
+
+      <!-- Project Info -->
+      <div class="project-info">
+        <h1>Packaging Design - Newprint</h1>
+        <p class="project-subtitle">Structural design and prepress</p>
+        <p>
+         as Structural Designer, I worked on a wide variety of projects, developing tailored packaging
+         solutions for diverse industries such as food, beauty, and pharmaceuticals.<br>
+         Creating custom packaging for each product required a high level of attention to detail and 
+         creativity to deliver functional, innovative, and production-feasible designs.<br>
+         My responsibilities ranged from detailed structural design to ordering the necessary tools 
+         and materials, while maintaining constant communication with clients. Additionally, I contributed 
+         directly to production processes, including printing plate production, assisting with digital 
+         printing, and coordinating shipping.
+
+
+
+        </p>
+        <h3>Skills & Tools Used</h3>
+        <ul class="project-skills">
+          <li>Illustrator</li>
+          <li>Rhinoceros</li>
+          <li>PSS</li>
+          <li>Conceptualization</li> 
+          <li>Indesign</li>
+          <li>Keyshot</li>
+          <li>Product Presentation</li>
+          <li>3D Printing</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/juan-quintero96/" target="_blank"><i class="lab la-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/jcquinteroom_ph/" target="_blank"><i class="lab la-instagram"></i></a>
+        <a href="https://www.behance.net/juanCa96/" target="_blank"><i class="lab la-behance"></i></a>
+      </div>
+      <p>Contact: juancquinteroma@gmail.com</p>
+      <p>&copy; 2025 Juan Quintero. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function setMainImage(thumb) {
+      const main = document.getElementById('mainPreview');
+      main.src = thumb.src;
+
+      const thumbnails = document.querySelectorAll('.thumbnail-gallery img');
+      thumbnails.forEach(img => img.classList.remove('active'));
+      thumb.classList.add('active');
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const mainImage = document.getElementById("mainPreview");
+      mainImage.addEventListener("click", () => {
+        const src = mainImage.src;
+        const lightbox = document.createElement("div");
+        lightbox.classList.add("lightbox");
+        lightbox.innerHTML = `<img src="${src}" alt="Full preview"><span class="close-btn">&times;</span>`;
+        document.body.appendChild(lightbox);
+
+        document.querySelector(".close-btn").onclick = () => lightbox.remove();
+        lightbox.onclick = (e) => { if (e.target === lightbox) lightbox.remove(); };
+      });
+    });
+  </script>
+</body>
+</html>
