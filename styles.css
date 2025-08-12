@@ -45,6 +45,12 @@ h2 {
   font-weight: 700;
 }
 
+h3 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 18pt;
+  font-weight: 450;
+  margin-bottom: 0.5em;
+}
 p {
   font-size: 18pt;
   font-weight: 400;
