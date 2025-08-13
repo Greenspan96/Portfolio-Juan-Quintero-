@@ -425,7 +425,7 @@ footer {
   padding: 3em 0; 
 }
 .soft-skill-card img {
-  width: 905px;
+  max-width: 905px;
   height: auto;
   border-radius: 8px;
   padding: 3em 0; 
