@@ -28,7 +28,7 @@
       <nav>
         <ul class="nav-links">
           <li><a href="about.html">About Me</a></li>
-          <li><a href="product-design.html">Product Design</a></li>
+          <li><a href="product-design.html">Industrial Design</a></li>
           <li><a href="graphic-design.html">Graphic Design</a></li>
           <li><a href="ux-ui.html">UX/UI</a></li>
           <li><a href="contact.html"><b>Contact</b></a></li>
@@ -70,16 +70,30 @@
     </div>
   </main>
 
-  <footer>
-     <div class="footer-container">
+   <footer>
+    <div class="footer-container">
+      <button onclick="scrollToTop()" class="back-to-top">↑ Back to Top</button>
        <div class="social-icons">
          <a href="https://www.linkedin.com/in/juan-quintero96/" target="_blank"><i class="lab la-linkedin-in"></i></a>
-        <a href="https://www.instagram.com/jcquinteroom_ph/" target="_blank"><i class="lab la-instagram"></i></a>
-        <a href="https://www.behance.net/juanCa96/" target="_blank"><i class="lab la-behance"></i></a>
-      </div>
-      <h4>Contact: juancquinteroma@gmail.com</h4>
-      <h4>&copy; 2025 Juan Quintero. All rights reserved.</h4>
+         <a href="https://www.instagram.com/jcquinteroom_ph/" target="_blank"><i class="lab la-instagram"></i></a>
+         <a href="https://www.behance.net/juanCa96/" target="_blank"><i class="lab la-behance"></i></a>
+       </div>
+       <div class="footer-links">
+         <a href="about.html">About Me</a>
+         <a href="product-design.html">Industrial Design</a>
+         <a href="graphic-design.html">Graphic Design</a>
+         <a href="ux-ui.html">UX/UI</a>
+         <a href="contact.html">Contact</a>
+       </div>
+       <h4>Contact: juancquinteroma@gmail.com</h4>
+       <h4>&copy; 2025 Juan Quintero. All rights reserved.</h4>
     </div>
   </footer>
+    <script>
+  window.addEventListener("scroll", () => {
+    const header = document.querySelector("header");
+    header.classList.toggle("scrolled", window.scrollY > 10);
+  });
+  </script>
 </body>
 </html>

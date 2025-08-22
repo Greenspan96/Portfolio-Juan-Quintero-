@@ -268,6 +268,24 @@ footer {
   padding: 2em;
   font-size: 18px;
 }
+.footer-links {
+  margin: 1em 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5em;
+}
+
+.footer-links a {
+  color: #0D2137;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #FF8E2B;
+}
 .social-icons {
   margin: 1em 0;
   display: flex;
@@ -287,6 +305,21 @@ footer {
 .profile{
   image-resolution: 50%;
 
+}
+.back-to-top {
+  margin: 1em;
+  padding: 1em 1.5em;
+  background-color: #0D2137;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.back-to-top:hover {
+  background-color: #FF8E2B;
 }
 
 /* About Section */
@@ -415,7 +448,7 @@ footer {
   display: flex;
   align-items: center;
   gap: 3em;
-  max-width: 1200px;
+  max-width: 1000px;
   flex-wrap: wrap;
 }
 .skill-card img {
@@ -424,12 +457,15 @@ footer {
   border-radius: 8px;
   padding: 3em 0; 
 }
-.soft-skill-card img {
-  max-width: 905px;
-  height: auto;
-  border-radius: 8px;
-  padding: 3em 0; 
-}
+.project-skills{
+  color: #0D2137;
+  text-align: center;
+  padding: 1em 1.5em;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2em;
+  }
 /* Project Detail Page */
 .project-container {
   display: flex;
@@ -511,7 +547,7 @@ footer {
   }
 }
 
-/* Amazon-style gallery */
+/* projects gallery */
 .project-images {
   flex: 1;
   display: flex;
@@ -581,7 +617,7 @@ footer {
   color: white;
   cursor: pointer;
 }
-/* CONTACT PAGE STYLES */
+/* CONTACT PAGE */
 
 .contact-section {
   padding: 4em 2em;

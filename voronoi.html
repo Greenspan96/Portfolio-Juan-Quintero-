@@ -28,7 +28,7 @@
       <nav>
         <ul class="nav-links">
           <li><a href="about.html">About Me</a></li>
-          <li><a href="product-design.html"><b>Product Design</b></a></li>
+          <li><a href="product-design.html"><b>Industrial Design</b></a></li>
           <li><a href="graphic design.html">Graphic Design</a></li>
           <li><a href="ux-ui.html">UX/UI</a></li>
           <li><a href="contact.html">Contact</a></li>
@@ -69,7 +69,7 @@
         <p>
         This project aims to deliver high-quality furniture products enhanced by additive manufacturing. 
         The goal was to offer both aesthetic value and functional services, such as product updates and the replacement 
-        of individual parts—ultimately extending the product’s lifecycle<br>
+        of individual parts—ultimately extending the product’s lifecycle.<br>
         The design-driven research and planning process led to the development of a viable business model, 
         including a system of key partners and resources. Leveraging available technologies, I created a furniture line
         based on the Voronoi structure to standardize the visual identity and composition of the collection.
@@ -88,19 +88,25 @@
       </div>
     </div>
   </main>
-
-<footer>
-     <div class="footer-container">
+ <footer>
+    <div class="footer-container">
+      <button onclick="scrollToTop()" class="back-to-top">↑ Back to Top</button>
        <div class="social-icons">
          <a href="https://www.linkedin.com/in/juan-quintero96/" target="_blank"><i class="lab la-linkedin-in"></i></a>
-        <a href="https://www.instagram.com/jcquinteroom_ph/" target="_blank"><i class="lab la-instagram"></i></a>
-        <a href="https://www.behance.net/juanCa96/" target="_blank"><i class="lab la-behance"></i></a>
-      </div>
-      <h4>Contact: juancquinteroma@gmail.com</h4>
-      <h4>&copy; 2025 Juan Quintero. All rights reserved.</h4>
+         <a href="https://www.instagram.com/jcquinteroom_ph/" target="_blank"><i class="lab la-instagram"></i></a>
+         <a href="https://www.behance.net/juanCa96/" target="_blank"><i class="lab la-behance"></i></a>
+       </div>
+       <div class="footer-links">
+         <a href="about.html">About Me</a>
+         <a href="product-design.html">Industrial Design</a>
+         <a href="graphic-design.html">Graphic Design</a>
+         <a href="ux-ui.html">UX/UI</a>
+         <a href="contact.html">Contact</a>
+       </div>
+       <h4>Contact: juancquinteroma@gmail.com</h4>
+       <h4>&copy; 2025 Juan Quintero. All rights reserved.</h4>
     </div>
   </footer>
-
   <script>
     function setMainImage(thumb) {
       const main = document.getElementById('mainPreview');
@@ -124,6 +130,12 @@
         lightbox.onclick = (e) => { if (e.target === lightbox) lightbox.remove(); };
       });
     });
+  </script>
+    <script>
+  window.addEventListener("scroll", () => {
+    const header = document.querySelector("header");
+    header.classList.toggle("scrolled", window.scrollY > 10);
+  });
   </script>
 </body>
 </html>
