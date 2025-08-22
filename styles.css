@@ -436,61 +436,54 @@ footer {
 .project-card:hover {
   transform: translateY(-5px);
 }
-/* digital skill Section */
-.skills {
-  background-color: #ffffff;
-  padding: 4em 2em;
-  display: flex;
-  justify-content: center;
-}
-
-.digital-skills {
-  display: flex;
-  align-items: center;
-  gap: 3em;
-  max-width: 1000px;
-  flex-wrap: wrap;
-}
-.skill-card {
-  max-width: 905px;
-  height: auto;
-  border-radius: 8px;
-  padding: 3em 0; 
-}
-.skill-card img{
-  max-width: 905px;
-  height: auto;
-  border-radius: 8px;
-  padding: 3em 0; 
-}
-.soft-skill-list{
-  list-style: none;
-  display: flex;
-  gap: 1.5em;
-  margin: 0;
+/* Digital skills image responsive */
+.skills-block {
+  max-width: 915px;
+  margin: 0 auto 3em auto;
   padding: 0;
-  justify-content: space-between;
-}
-.soft-skill-card{
-  max-width: 1000px;
-  padding: 12px;
-  display: flex;
-  justify-content: center;
-  height: auto;
-  gap: 2em;
-  flex-direction: column;
 }
 
-.project-skills{
-  color: #0D2137;
-  text-align: center;
-  padding: 1em 1.5em;
-  font-size: 18px;
+.digital-skills { 
+  /* optional wrapper if you want to center/limit width */
+  max-width: 914px;
+  margin: 2em auto;
+}
+.digital-skill-img {
+  max-width: 900px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Soft skills responsive layout */
+.soft-skill-list {
   display: flex;
-  justify-content: space-between;
-  margin-top: 2em;
-  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  padding: 0;
+  margin: 3em auto 3em auto;
+}
+.soft-skill-card {
+  flex: 1 1 180px;   /* grows, wraps nicely */
+  max-width: 240px;  /* prevents getting too wide on desktops */
+  text-align: center;
+}
+.soft-skill-card img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto .5rem;
+}
+
+/* Mobile tweak (optional) */
+@media (max-width: 468px) {
+  .soft-skill-list {
+    flex-direction: column;
+    align-items: center;
   }
+}
+
 /* Project Detail Page */
 .project-container {
   display: flex;
