@@ -452,7 +452,13 @@ footer {
   flex-wrap: wrap;
 }
 .skill-card {
-  width: 905px;
+  max-width: 905px;
+  height: auto;
+  border-radius: 8px;
+  padding: 3em 0; 
+}
+.skill-card img{
+  max-width: 905px;
   height: auto;
   border-radius: 8px;
   padding: 3em 0; 
@@ -474,16 +480,7 @@ footer {
   gap: 2em;
   flex-direction: column;
 }
-.soft-skill-card img{
-  max-width: 100px;
-  padding: 12px;
-  display: flex;
-  justify-content: center;
-  height: auto;
-  justify-content: space-between;
-  gap: 2em;
-  flex-direction: column;
-}
+
 .project-skills{
   color: #0D2137;
   text-align: center;
