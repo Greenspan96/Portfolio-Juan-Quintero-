@@ -451,11 +451,20 @@ footer {
   max-width: 1000px;
   flex-wrap: wrap;
 }
-.skill-card img {
+.skill-card {
   width: 905px;
   height: auto;
   border-radius: 8px;
   padding: 3em 0; 
+}
+.soft-skill-card{
+  max-width: 100px;
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  height: auto;
+  justify-content: space-between;
+  gap: 2em;
 }
 .project-skills{
   color: #0D2137;
