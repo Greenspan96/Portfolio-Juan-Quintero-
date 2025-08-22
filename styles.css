@@ -457,7 +457,24 @@ footer {
   border-radius: 8px;
   padding: 3em 0; 
 }
+.soft-skill-list{
+  list-style: none;
+  display: flex;
+  gap: 1.5em;
+  margin: 0;
+  padding: 0;
+  justify-content: space-between;
+}
 .soft-skill-card{
+  max-width: 1000px;
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  height: auto;
+  gap: 2em;
+  flex-direction: column;
+}
+.soft-skill-card img{
   max-width: 100px;
   padding: 12px;
   display: flex;
@@ -465,6 +482,7 @@ footer {
   height: auto;
   justify-content: space-between;
   gap: 2em;
+  flex-direction: column;
 }
 .project-skills{
   color: #0D2137;
@@ -474,6 +492,7 @@ footer {
   display: flex;
   justify-content: space-between;
   margin-top: 2em;
+  align-items: stretch;
   }
 /* Project Detail Page */
 .project-container {
