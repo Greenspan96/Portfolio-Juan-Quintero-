@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="Icon.png" type="image/png" />
   <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" />
-  <script defer>
+    <script defer>
     // Toggle burger menu
     document.addEventListener("DOMContentLoaded", function () {
       const burger = document.querySelector(".burger");
@@ -28,13 +28,13 @@
       <nav>
         <ul class="nav-links">
           <li><a href="about.html">About Me</a></li>
-          <li><a href="product-design.html"><b>Industrial Design</b></a></li>
+          <li><a href="product-design.html">Industrial Design</a></li>
           <li><a href="graphic design.html">Graphic Design</a></li>
-          <li><a href="ux-ui.html">UX/UI</a></li>
+          <li><a href="ux-ui.html"><b>UX/UI</b></a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
-      <div class="burger">
+       <div class="burger">
   <div></div>
   <div></div>
   <div></div>
@@ -47,48 +47,41 @@
       <!-- Main Image + Thumbnails -->
       <div class="project-images">
         <div class="main-image">
-          <img id="mainPreview" src="images/newprint render packaging-03.png" alt="Packaging render" />
+          <img id="mainPreview" src="images/cacao home mockup.png" alt="home mockup" />
         </div>
 
         <div class="thumbnail-gallery">
-          <img src="images/newprint render packaging-03.png" alt="Packaging render" class="active" onclick="setMainImage(this)" />
-          <img src="images/newprint render 1-02.png" alt="render packaging" onclick="setMainImage(this)" />
-          <img src="images/newprint render 1-01.png" alt="render syringe packaging" onclick="setMainImage(this)" />
-          <img src="images/newprint render packaging-4-04.png" alt="render compound" onclick="setMainImage(this)" />
-          <img src="images/newprint_true_energy_render.png" alt="render beauty packaging" onclick="setMainImage(this)" />
-          <img src="images/newprint_shaka_render.png" alt="food packaging render" onclick="setMainImage(this)" />
+          <img src="images/cacao home mockup.png" alt="home mockup" class="active" onclick="setMainImage(this)" />
+          <img src="images/cacao_color.jpg" alt="color" onclick="setMainImage(this)" />
+          <img src="images/cacao_moodboard.jpg" alt="moodboard" onclick="setMainImage(this)" />
+          <img src="images/cacao_sitemap.jpg" alt="site map" onclick="setMainImage(this)" />
+          <img src="images/cacao_wireframes.jpg" alt="wireframes" onclick="setMainImage(this)" />
+          <img src="images/cacao_persona.jpg" alt="persona" onclick="setMainImage(this)" />
         </div>
       </div>
 
       <!-- Project Info -->
       <div class="project-info">
-        <h1>Packaging Design - Newprint</h1>
-        <p class="project-subtitle">Structural design and prepress</p>
+        <h1>Mazda CasaToro Dealearships</h1>
+        <p class="project-subtitle">User experience research</p>
         <p>
-         As Structural Designer, I worked on a wide variety of projects, developing tailored packaging
-         solutions for diverse industries such as food, beauty, and pharmaceuticals.<br>
-         Creating custom packaging for each product required a high level of attention to detail and 
-         creativity to deliver functional, innovative, and production-feasible designs.(Prototyping with Kongsberg XE-10)<br>
-         My responsibilities ranged from detailed structural design to ordering the necessary tools 
-         and materials, while maintaining constant communication with clients.<br> Additionally, I contributed 
-         directly to production processes, including printing plate production, assisting with digital 
-         printing, and coordinating shipping.
+        Applied Design Thinking to improve customer experience at Mazda dealerships focused on the 
+        post purchase service.<br> Conducted user interviews and field observations to identify the 
+        pain points of the experience and generate an action plan. Created user journey maps, empathy 
+        maps and prototypes.
         </p>
         <h3>Skills & Tools Used</h3>
         <ul class="project-skills">
-          <li>Artios CAD</li>
-          <li>Illustrator</li>
-          <li>Photoshop</li>
-          <li>EPMS</li> 
-          <li>Shipstation</li>
-          <li>Keyshot</li>
-          <li>Kongsberg prototyping</li>
-          <li>Email communication</li>
+          <li>Observation</li>
+          <li>Reseach</li>
+          <li>testing</li>
+          <li>Conceptualization</li> 
+          <li>Prototyping</li>
         </ul>
       </div>
     </div>
   </main>
- <footer>
+    <footer>
     <div class="footer-container">
       <button onclick="scrollToTop()" class="back-to-top">↑ Back to Top</button>
        <div class="social-icons">
@@ -107,6 +100,7 @@
        <h4>&copy; 2025 Juan Quintero. All rights reserved.</h4>
     </div>
   </footer>
+
   <script>
     function setMainImage(thumb) {
       const main = document.getElementById('mainPreview');
