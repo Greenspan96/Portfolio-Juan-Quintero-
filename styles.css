@@ -163,12 +163,17 @@ header {
   padding: 0.75em 1.5em;
   text-decoration: none;
   font-weight: 700;
-  border-radius: 5px;
+  border-radius: 15px;
   transition: background-color 0.5s ease;
 }
 
 .resume-button:hover {
-  background-color: #bc6214;
+  background-color: #0D2137;
+  color: #E0EAF5;
+}
+.resume-button:active {
+ background-color: #b2590b;
+  color: #0D2137;
 }
 
 /* Carousel */
