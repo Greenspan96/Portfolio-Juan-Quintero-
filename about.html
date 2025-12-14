@@ -64,11 +64,21 @@ about Project Management, coding and French. Fluent in English and Spanish.</p>
     <section class="skills">
       <div class="skills-block">
         <h2>Digital skills</h2>
-        <div class="digital-skills">
-          <img src="images/skills_digital.png" alt="Digital skills chart" class="digital-skill-img">
-        </div>
-      </div>
-
+        <ul class="project-skills">
+          <li>Illustrator</li>
+          <li>Indesign</li>
+          <li>Solidworks</li>
+          <li>Photoshop</li>
+          <li>Lightroom</li>
+          <li>Keyshot</li>
+          <li>Premiere</li>
+          <li>Rhinoceros</li>
+          <li>Figma</li>
+          <li>Hubspot</li>
+          <li>Miro</li>
+          <li>Microsoft Suite</li>
+          <li>html</li>
+        </ul>
       <div class="skills-block">
         <h2>Soft skills</h2>
         <div class="soft-skill-list">
@@ -89,10 +99,11 @@ about Project Management, coding and French. Fluent in English and Spanish.</p>
       <div class="skills-block">
         <h2>Languages</h2>
         <ul class="project-skills">
-          <li><h3>English: Advanced</h3></li>
-          <li><h3>Spanish: Native</h3></li>
-          <li><h3>French: Basic</h3></li>
+          <li><p>English: Advanced</p></li>
+          <li><p>Spanish: Native</p></li>
+          <li><p>French: Basic</p></li>
         </ul>
+      </div>
       </div>
     </section>
 
@@ -117,5 +128,28 @@ about Project Management, coding and French. Fluent in English and Spanish.</p>
        <h4>&copy; 2025 Juan Quintero. All rights reserved.</h4>
     </div>
   </footer>
+   <script>
+  const track = document.querySelector('.carousel-track');
+  const prev = document.querySelector('.prev');
+  const next = document.querySelector('.next');
+
+  next.addEventListener('click', () => {
+    track.scrollBy({ left: 300, behavior: 'smooth' });
+  });
+
+  prev.addEventListener('click', () => {
+    track.scrollBy({ left: -300, behavior: 'smooth' });
+  });
+
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  </script>
+  <script>
+  window.addEventListener("scroll", () => {
+    const header = document.querySelector("header");
+    header.classList.toggle("scrolled", window.scrollY > 10);
+  });
+  </script>
  </body>
 </html>

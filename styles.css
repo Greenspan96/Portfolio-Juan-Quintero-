@@ -317,7 +317,7 @@ footer {
   background-color: #0D2137;
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 15px;
   cursor: pointer;
   font-size: 0.9rem;
   transition: background-color 0.3s ease;
@@ -337,45 +337,53 @@ footer {
 
 .about-container {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 3em;
-  max-width: 1200px;
+  max-width: 1100px;
   flex-wrap: wrap;
 }
 
 .about-image img {
-  width: 290px;
+  width: 400px;
   height: auto;
-  border-radius: 12px;
+  border-radius: 25px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin-top: 18px;
 }
 
 .about-text {
   flex: 1;
   min-width: 250px;
+  margin: 0 auto;
 }
 
-.about-text h2 {
-  font-size: 22pt;
-  margin-bottom: 0.5em;
+.skill-tag li {
+  background-color: #E0EAF5;
+  color: #0D2137;
+  border-radius: 15px;
+  padding: 10px;
+  gap: 1em;
+  margin: 0 auto;
+  flex-grow: 1;
+;
 }
-
-.about-text p {
-  font-size: 18pt;
-  line-height: 1.6;
-}
-
 /* Mobile styles */
-@media (max-width: 768px) {
+@media (max-width: 700px) {
   .about-container {
     flex-direction: column;
-    text-align: center;
+    text-align: left;
+    display: block;
   }
 
   .about-image img {
-    width: 60%;
-    max-width: 250px;
+    width: 100%;
+    max-width: 600px;
     margin-bottom: 1em;
+  }
+  .skills-block{
+    flex-direction: column;
+    box-align: center;
+    display: block;
   }
 }
 /* Project Section */
@@ -443,29 +451,16 @@ footer {
 }
 /* Digital skills image responsive */
 .skills-block {
-  max-width: 915px;
+  max-width: 1100px;
   margin: 0 auto 3em auto;
-  padding: 0;
+  flex-direction: column;
 }
-
-.digital-skills { 
-  /* optional wrapper if you want to center/limit width */
-  max-width: 914px;
-  margin: 2em auto;
-}
-.digital-skill-img {
-  max-width: 900px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
 /* Soft skills responsive layout */
 .soft-skill-list {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  justify-content: center;
+  justify-content:space-around;
   padding: 0;
   margin: 3em auto 3em auto;
 }
@@ -497,7 +492,8 @@ footer {
   background-color: #ffffff;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: flex-start;
+  align-items:stretch;
+  max-width: 1400px;
 }
 
 .project-images {
@@ -551,14 +547,16 @@ footer {
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 1em;
+  gap: 1.5em;
+  justify-content:flex-start;
+  
 }
 
 .project-skills li {
   background-color: #E0EAF5;
   color: #0D2137;
-  padding: 0.5em 1em;
-  border-radius: 5px;
+  padding: 0.2em 1em 0.2em 1em;
+  border-radius: 15px;
   font-weight: 600;
   font-size: 16pt;
 }
