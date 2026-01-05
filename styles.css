@@ -16,22 +16,6 @@ body {
   color: #0D2137;
   line-height: 1.6;
 }
-body.about header {
-  background-color: #ffffff;
-  }
-body.graphic-design header {
-  background-color: #ffffff;
-  }
-body.product-design header {
-  background-color: #ffffff;
-  }
-body.project header {
-  background-color: #ffffff;
-}
-body.contact header {
-  background-color: #ffffff;
-}
-
 h1 {
   font-family: 'Oswald', sans-serif;
   font-size: 36pt;
@@ -69,8 +53,13 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  padding: 1em 2em;
+  padding: 2em 5em;
 }
+
+header.scrolled {
+  background-color: rgba(225, 237, 244, 0.456);
+  backdrop-filter: blur(18px);
+  }
 
 .container {
   display: flex;
@@ -141,14 +130,13 @@ header {
 .hero {
   position: relative;
   height: 100vh;
-  margin-top: -80px; /* pull up hero to fill under header */
+  margin-top: -110px; /* pull up hero to fill under header */
   padding-top: 80px;  /* push content below header inside */
-  background: url('images/hero.png') no-repeat center center/cover;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-image: linear-gradient rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5);
+  background: url('images/hero.png') center / cover no-repeat;
 }
 .hero-content {
   padding: 2em;
@@ -181,14 +169,16 @@ header {
   display: flex;
   align-items: center;
   padding: 4em 2em;
-  background-color: #f5f9ff;
+  background-color: #ffffff;
   flex-direction: column;
   width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
 }
 .carousel-wrapper {
   display: flex;
   align-items: center;
-  gap: 1em;
+  gap: 2em;
   width: 100%;
   position: relative;
 }
@@ -200,7 +190,6 @@ header {
   padding: 1em 0;
   width: 100%;
 }
-
 .carousel-slide {
   flex: 0 0 auto;
   width: 100%;
@@ -221,10 +210,8 @@ header {
   transition: background-color 0.5s ease;
    }
 .carousel-slide:hover{
-  transform: scale(1.05);
+  transform: translateY(-5px) scale(1.05);
   filter: brightness(0.85);
-  transform: translateY(-5px);
-
 }
 .carousel-btn {
   font-size: 3rem;
@@ -390,6 +377,8 @@ footer {
 .projects-section {
   padding: 4em 2em;
   background-color: #ffffff;
+  max-width: 2000px;
+  margin: 0 auto;
 }
 
 .section-title {
@@ -494,6 +483,7 @@ footer {
   justify-content: center;
   align-items:stretch;
   max-width: 1400px;
+  margin: 0 auto;
 }
 
 .project-images {
