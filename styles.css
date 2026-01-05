@@ -42,7 +42,7 @@ h4 {
   margin-bottom: 0.5em;
 }
 p {
-  font-size: 18pt;
+  font-size: clamp(1rem, 1.1vw, 1.35rem);
   font-weight: 400;
   margin-bottom: 1em;
 }
@@ -343,18 +343,13 @@ footer {
   min-width: 250px;
   margin: 0 auto;
 }
-
-.skill-tag li {
-  background-color: #E0EAF5;
-  color: #0D2137;
-  border-radius: 15px;
-  padding: 10px;
-  gap: 1em;
-  margin: 0 auto;
-  flex-grow: 1;
-;
+.skills-section{
+  background-color: #ffffff;
+  padding: 2em;
+  display: flex;
+  justify-content: center;
 }
-/* Mobile styles */
+ /* Mobile styles */
 @media (max-width: 700px) {
   .about-container {
     flex-direction: column;
@@ -539,6 +534,7 @@ footer {
   flex-wrap: wrap;
   gap: 1.5em;
   justify-content:flex-start;
+  margin-top: 1rem;
   
 }
 
