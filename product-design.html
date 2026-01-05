@@ -80,7 +80,10 @@
        <h4>&copy; 2025 Juan Quintero. All rights reserved.</h4>
     </div>
   </footer>
-  <script>
+ <script>
+    function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
   window.addEventListener("scroll", () => {
     const header = document.querySelector("header");
     header.classList.toggle("scrolled", window.scrollY > 10);
