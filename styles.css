@@ -57,7 +57,7 @@ header {
 }
 
 header.scrolled {
-  background-color: rgba(225, 237, 244, 0.456);
+  background-color: rgba(225, 237, 244, 0.325);
   backdrop-filter: blur(18px);
   }
 
@@ -217,7 +217,7 @@ header.scrolled {
   flex: 0 0 auto;
   min-width: 340px;
   width: 500px;
-  height: 300px;
+  height: 350px;
   background: var(--bg) center / cover no-repeat;
   border-radius: 16px;
   overflow: hidden;
@@ -398,7 +398,6 @@ footer {
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   margin-top: 18px;
 }
-
 .about-text {
   flex: 1;
   min-width: 250px;
@@ -406,9 +405,43 @@ footer {
 }
 .skills-section{
   background-color: #ffffff;
-  padding: 2em;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4em 2em;
+}
+.soft-skill-list {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.soft-skill-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background-color: #bc621444;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.soft-skill-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.soft-skill-item span {
+  font-weight: 600;
+  font-size: 1rem;
 }
  /* Mobile styles */
 @media (max-width: 700px) {
@@ -497,28 +530,46 @@ footer {
 /* Digital skills image responsive */
 .skills-block {
   max-width: 1100px;
-  margin: 0 auto 3em auto;
+  margin-bottom: 3em; /* solo margen inferior */
   flex-direction: column;
 }
 /* Soft skills responsive layout */
 .soft-skill-list {
   display: flex;
+  gap: 2rem;
   flex-wrap: wrap;
-  gap: 1rem;
-  justify-content:space-around;
-  padding: 0;
-  margin: 3em auto 3em auto;
+  justify-content: space-between;
+  padding-left: 0;
+  margin-left: 0;
+  margin-top: 1rem;
 }
+
 .soft-skill-card {
-  flex: 1 1 180px;   /* grows, wraps nicely */
-  max-width: 240px;  /* prevents getting too wide on desktops */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+  padding: 1.5rem;
+  width: 180px;
+  background-color: #f3f6fb;
+  border-radius: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+.soft-skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
 .soft-skill-card img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto .5rem;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 1rem;
+}
+
+.soft-skill-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 /* Mobile tweak (optional) */

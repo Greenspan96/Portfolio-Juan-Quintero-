@@ -62,51 +62,58 @@ about Project Management, coding and French. Fluent in English and Spanish.</p>
     </section>
 
     <section class="skills-section">
-      <div class="skills-block">
-        <h2>Digital skills</h2>
-        <ul class="project-skills">
-          <li>Illustrator</li>
-          <li>Indesign</li>
-          <li>Solidworks</li>
-          <li>Photoshop</li>
-          <li>Lightroom</li>
-          <li>Keyshot</li>
-          <li>Premiere</li>
-          <li>Rhinoceros</li>
-          <li>Figma</li>
-          <li>Hubspot</li>
-          <li>Miro</li>
-          <li>Microsoft Suite</li>
-          <li>html / CSS</li>
-        </ul>
-      <div class="skills-block">
-        <h2>Soft skills</h2>
-        <div class="soft-skill-list">
-          <div class="soft-skill-card">
-            <img src="images/empathy icon.png" alt="Empathy">
-            <h3>Empathy</h3>
-          </div>
-          <div class="soft-skill-card">
-            <img src="images/adaptability icon.png" alt="Adaptability">
-            <h3>Adaptability</h3>
-          </div>
-          <div class="soft-skill-card">
-            <img src="images/teamwork icon.png" alt="Teamwork">
-            <h3>Team Work</h3>
-          </div>
-        </div>
-      </div>
-      <div class="skills-block">
-        <h2>Languages</h2>
-        <ul class="project-skills">
-          <li>English: Advanced</li>
-          <li>Spanish: Native</li>
-          <li>French: Basic</li>
-        </ul>
-      </div>
-      </div>
-    </section>
 
+  <!-- Digital Skills -->
+  <div class="skills-block">
+    <h2>Digital Skills</h2>
+    <ul class="project-skills">
+      <li>Illustrator</li>
+      <li>InDesign</li>
+      <li>SolidWorks</li>
+      <li>Photoshop</li>
+      <li>Lightroom</li>
+      <li>Keyshot</li>
+      <li>Premiere</li>
+      <li>Rhinoceros</li>
+      <li>Figma</li>
+      <li>HubSpot</li>
+      <li>Miro</li>
+      <li>Microsoft Suite</li>
+      <li>HTML / CSS</li>
+    </ul>
+  </div>
+
+  <!-- Soft Skills -->
+  <div class="skills-block">
+  <h2>Soft Skills</h2>
+  <div class="soft-skill-list">
+    <div class="soft-skill-item">
+      <img src="images/empathy icon.png" alt="Empathy icon">
+      <h3>Empathy</h3>
+    </div>
+
+    <div class="soft-skill-item">
+      <img src="images/adaptability icon.png" alt="Adaptability icon">
+      <h3>Adaptability</h3>
+    </div>
+
+    <div class="soft-skill-item">
+      <img src="images/teamwork icon.png" alt="Teamwork icon">
+      <h3>Teamwork</h3>
+    </div>
+  </div>
+</div>
+  <!-- Languages -->
+  <div class="skills-block">
+    <h2>Languages</h2>
+    <ul class="project-skills">
+      <li>English · Advanced</li>
+      <li>Spanish · Native</li>
+      <li>French · Basic</li>
+    </ul>
+  </div>
+
+</section>
   </main>
 
  <footer>
@@ -129,19 +136,7 @@ about Project Management, coding and French. Fluent in English and Spanish.</p>
     </div>
   </footer>
    <script>
-  const track = document.querySelector('.carousel-track');
-  const prev = document.querySelector('.prev');
-  const next = document.querySelector('.next');
-
-  next.addEventListener('click', () => {
-    track.scrollBy({ left: 300, behavior: 'smooth' });
-  });
-
-  prev.addEventListener('click', () => {
-    track.scrollBy({ left: -300, behavior: 'smooth' });
-  });
-
-  function scrollToTop() {
+    function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
   </script>
