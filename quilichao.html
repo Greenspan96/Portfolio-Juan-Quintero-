@@ -64,11 +64,14 @@
         <h1>Quilichao Service Design </h1>
         <p class="project-subtitle">User experience and service design</p>
         <p>
-        My work on this project focused on the research and planning stages for the creation of the website. 
-        I used research and conceptual tools such as user persona, target audience definition, empathy maps, and an analysis of the current competitive market.<br>
-        Starting from the site map, I gained clarity on how the low-fidelity wireframes should be structured, allowing me to move 
-        forward to the final prototype phase. This project helped me refine my skills in prototyping (Figma) and usability testing 
-        prior to code development.
+        This project explores the design of a restaurant’s brand and service experience through
+         a case study conducted in Bogotá. The objective was to articulate and strengthen the 
+         brand’s core values—culinary tradition and cultural diversity—across the entire customer journey.<br>
+
+Using service design and UX methodologies, including visual communication frameworks and a service blueprint, 
+the project mapped key touchpoints, interactions, and support processes. This analysis informed strategic 
+opportunities to improve brand consistency and optimize both frontstage customer interactions and backstage 
+operational experiences.
         </p>
         <h3>Skills & Tools Used</h3>
         <ul class="project-skills">
@@ -125,12 +128,18 @@
         lightbox.onclick = (e) => { if (e.target === lightbox) lightbox.remove(); };
       });
     });
-  </script>
-    <script>
+    window.addEventListener("scroll", () => {
+    const header = document.querySelector("header");
+    header.classList.toggle("scrolled", window.scrollY > 10);
+  });
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
   window.addEventListener("scroll", () => {
     const header = document.querySelector("header");
     header.classList.toggle("scrolled", window.scrollY > 10);
   });
   </script>
+    
 </body>
 </html>
