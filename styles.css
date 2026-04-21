@@ -154,7 +154,6 @@ header.scrolled {
 
 .resume-button {
   display: inline-block;
-  margin-top: 0.5em;
   color: #0D2137;
   padding: 12px 24px;
   text-decoration: none;
@@ -166,7 +165,10 @@ header.scrolled {
   font-family: 'Oswald', sans-serif;
   font-size: 18pt;
 }
-
+ @media (max-width: 768px) {
+  .resume-button {margin: 16px;
+  }
+}
 .resume-button:hover {
   background-color: #0D2137;
   color: #E0EAF5;
@@ -234,20 +236,22 @@ header.scrolled {
 
 .hability-image img {
   width: 100%;
-  max-width: 500px;
-  max-height: 350px;
+  height: 350px;
   border-top-right-radius: 24px;
   border-bottom-right-radius: 24px;
   aspect-ratio: 16/9;
+  object-fit: cover; /* This makes the GIF fill the area like a background */
+  display: block;
 }
 
 .hability-image-left img {
   width: 100%;
-  max-width: 500px;
-  max-height: 350px;
+  height: 350px;
   border-top-left-radius: 24px;
   border-bottom-left-radius: 24px;
   aspect-ratio: 16/9;
+  object-fit: cover; /* This makes the GIF fill the area like a background */
+  display: block;
 }
 .hability_card h3 {
   color: var(--color-white);
@@ -271,7 +275,7 @@ header.scrolled {
     flex-direction: column;
     align-items: center;
   }
- 
+
   .hability_card {
     width: 90%;
     max-width: 400px;
