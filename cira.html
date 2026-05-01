@@ -29,9 +29,8 @@
         <ul class="nav-links">
           <li><a href="about.html">About Me</a></li>
           <li><a href="product-design.html">Industrial Design</a></li>
-          <li><a href="graphic design.html"><b>Graphic Design</b></a></li>
+          <li><a href="graphic-design.html"><b>Graphic Design</b></a></li>
           <li><a href="ux-ui.html">UX/UI</a></li>
-          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
       <div class="burger">
@@ -43,13 +42,18 @@
   </header>
 
   <main class="project-detail">
+     <div class="back-button-container">
+    <a href="#" onclick="history.back(); return false;" class="back-button">
+    ← Back
+    </a>
+   </div>
     <div class="project-container">
-      <!-- Main Image + Thumbnails -->
       <div class="project-images">
         <div class="main-image">
+          <button class="nav-btn prev" onclick="changeImage(-1)">&#10094;</button>
           <img id="mainPreview" src="images/Cira Fackbooks Mockup.png" alt="Factbook" />
-        </div>
-
+          <button class="nav-btn next" onclick="changeImage(1)">&#10095;</button>
+       </div>   
         <div class="thumbnail-gallery">
           <img src="images/Cira Fackbooks Mockup.png" alt="Factbook mockup" class="active" onclick="setMainImage(this)" />
           <img src="images/Cira Fackbooks general.png" alt="Factbook general" onclick="setMainImage(this)" />
@@ -58,8 +62,7 @@
           <img src="images/Cira_digital_flyer-01.png" alt="Digital Flyer" onclick="setMainImage(this)" />
         </div>
       </div>
-
-      <!-- Project Info -->
+        <!-- Project Info -->
       <div class="project-info">
         <h1>Stationary and social media posts</h1>
         <p class="project-subtitle">CIRA - Graphic Design support</p>
@@ -91,39 +94,77 @@
        <div class="footer-links">
          <a href="about.html">About Me</a>
          <a href="product-design.html">Industrial Design</a>
-         <a href="graphic design.html">Graphic Design</a>
+         <a href="graphic-design.html">Graphic Design</a>
          <a href="ux-ui.html">UX/UI</a>
-         <a href="contact.html">Contact</a>
        </div>
        <h4>Contact: juancquinteroma@gmail.com</h4>
        <h4>&copy; 2026 Juan Quintero. All rights reserved.</h4>
     </div>
   </footer>  
   <script>
-    function setMainImage(thumb) {
-      const main = document.getElementById('mainPreview');
-      main.src = thumb.src;
+   // 1. Obtenemos todas las rutas de las imágenes de la galería
+const images = Array.from(document.querySelectorAll('.thumbnail-gallery img')).map(img => img.src);
+let currentIndex = 0;
 
-      const thumbnails = document.querySelectorAll('.thumbnail-gallery img');
-      thumbnails.forEach(img => img.classList.remove('active'));
-      thumb.classList.add('active');
-    }
+function setMainImage(thumb) {
+  const main = document.getElementById('mainPreview');
+  main.src = thumb.src;
+  
+  // Actualizamos el índice actual
+  currentIndex = images.indexOf(thumb.src);
 
-    document.addEventListener("DOMContentLoaded", () => {
-      const mainImage = document.getElementById("mainPreview");
-      mainImage.addEventListener("click", () => {
-        const src = mainImage.src;
-        const lightbox = document.createElement("div");
-        lightbox.classList.add("lightbox");
-        lightbox.innerHTML = `<img src="${src}" alt="Full preview"><span class="close-btn">&times;</span>`;
-        document.body.appendChild(lightbox);
+  // Manejo de clase activa
+  const thumbnails = document.querySelectorAll('.thumbnail-gallery img');
+  thumbnails.forEach(img => img.classList.remove('active'));
+  thumb.classList.add('active');
+}
 
-        document.querySelector(".close-btn").onclick = () => lightbox.remove();
-        lightbox.onclick = (e) => { if (e.target === lightbox) lightbox.remove(); };
-      });
-    });
+function changeImage(direction) {
+  currentIndex += direction;
+
+  // Si llegamos al final, volvemos al principio y viceversa
+  if (currentIndex >= images.length) currentIndex = 0;
+  if (currentIndex < 0) currentIndex = images.length - 1;
+
+  const main = document.getElementById('mainPreview');
+  main.src = images[currentIndex];
+
+  // Opcional: Actualizar cuál miniatura se ve "activa"
+  const thumbnails = document.querySelectorAll('.thumbnail-gallery img');
+  thumbnails.forEach(img => img.classList.remove('active'));
+  thumbnails[currentIndex].classList.add('active');
+}
+
+// Lightbox mejorado (Click para agrandar)
+document.addEventListener("DOMContentLoaded", () => {
+  const mainImage = document.getElementById("mainPreview");
+  mainImage.addEventListener("click", () => {
+    const lightbox = document.createElement("div");
+    lightbox.classList.add("lightbox");
+    
+    // El lightbox ahora también tiene flechas
+    lightbox.innerHTML = `
+      <button class="nav-btn prev" id="lbPrev">&#10094;</button>
+      <img src="${images[currentIndex]}" id="lbImage">
+      <button class="nav-btn next" id="lbNext">&#10095;</button>
+      <span class="close-btn">&times;</span>
+    `;
+    document.body.appendChild(lightbox);
+
+    // Funcionalidad de flechas dentro del lightbox
+    const lbImage = document.getElementById("lbImage");
+    document.getElementById("lbPrev").onclick = (e) => { e.stopPropagation(); changeImage(-1); lbImage.src = images[currentIndex]; };
+    document.getElementById("lbNext").onclick = (e) => { e.stopPropagation(); changeImage(1); lbImage.src = images[currentIndex]; };
+
+    document.querySelector(".close-btn").onclick = () => lightbox.remove();
+    lightbox.onclick = (e) => { if (e.target === lightbox) lightbox.remove(); };
+  });
+});
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
   </script>
-  <script>
+    <script>
   window.addEventListener("scroll", () => {
     const header = document.querySelector("header");
     header.classList.toggle("scrolled", window.scrollY > 10);

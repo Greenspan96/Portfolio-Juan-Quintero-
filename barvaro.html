@@ -29,9 +29,8 @@
         <ul class="nav-links">
           <li><a href="about.html">About Me</a></li>
           <li><a href="product-design.html">Industrial Design</a></li>
-          <li><a href="graphic design.html"><b>Graphic Design</b></a></li>
+          <li><a href="graphic-design.html"><b>Graphic Design</b></a></li>
           <li><a href="ux-ui.html">UX/UI</a></li>
-          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
       <div class="burger">
@@ -46,11 +45,12 @@
   <div class="project-container">
     
     <!-- Image Viewer -->
-<div class="project-images">
-  <div class="main-image">
-    <img id="mainPreview" src="images/barvaro_Coaster_Mockup.png" alt="Main Barvaro image">
-  </div>
-
+      <div class="project-images">
+        <div class="main-image">
+          <button class="nav-btn prev" onclick="changeImage(-1)">&#10094;</button>
+          <img id="mainPreview" src="images/barvaro_Coaster_Mockup.png" alt="Main Barvaro image">
+          <button class="nav-btn next" onclick="changeImage(1)">&#10095;</button>
+       </div>
   <div class="thumbnail-gallery">
     <img src="images/barvaro_Coaster_Mockup.png" alt="logo mockup" class="active" onclick="setMainImage(this)">
     <img src="images/barvaro_fachada_mockup.png" alt="fachada" onclick="setMainImage(this)">
@@ -102,46 +102,75 @@
          <a href="product-design.html">Industrial Design</a>
          <a href="graphic-design.html">Graphic Design</a>
          <a href="ux-ui.html">UX/UI</a>
-         <a href="contact.html">Contact</a>
        </div>
        <h4>Contact: juancquinteroma@gmail.com</h4>
-       <h4>&copy; 2025 Juan Quintero. All rights reserved.</h4>
+       <h4>&copy; 2026 Juan Quintero. All rights reserved.</h4>
     </div>
   </footer>
  <script>
-  function setMainImage(thumb) {
-    const main = document.getElementById('mainPreview');
-    main.src = thumb.src;
+   // 1. Obtenemos todas las rutas de las imágenes de la galería
+const images = Array.from(document.querySelectorAll('.thumbnail-gallery img')).map(img => img.src);
+let currentIndex = 0;
 
-    // Remove active class from all thumbnails
-    const thumbnails = document.querySelectorAll('.thumbnail-gallery img');
-    thumbnails.forEach(img => img.classList.remove('active'));
+function setMainImage(thumb) {
+  const main = document.getElementById('mainPreview');
+  main.src = thumb.src;
+  
+  // Actualizamos el índice actual
+  currentIndex = images.indexOf(thumb.src);
 
-    // Add active to clicked one
-    thumb.classList.add('active');
-  }
+  // Manejo de clase activa
+  const thumbnails = document.querySelectorAll('.thumbnail-gallery img');
+  thumbnails.forEach(img => img.classList.remove('active'));
+  thumb.classList.add('active');
+}
 
-  // Lightbox preview on click
-  document.addEventListener("DOMContentLoaded", () => {
-    const mainImage = document.getElementById("mainPreview");
-    mainImage.addEventListener("click", () => {
-      const src = mainImage.src;
-      const lightbox = document.createElement("div");
-      lightbox.classList.add("lightbox");
-      lightbox.innerHTML = `<img src="${src}" alt="Full preview"><span class="close-btn">&times;</span>`;
-      document.body.appendChild(lightbox);
+function changeImage(direction) {
+  currentIndex += direction;
 
-      document.querySelector(".close-btn").onclick = () => {
-        lightbox.remove();
-      };
+  // Si llegamos al final, volvemos al principio y viceversa
+  if (currentIndex >= images.length) currentIndex = 0;
+  if (currentIndex < 0) currentIndex = images.length - 1;
 
-      lightbox.onclick = (e) => {
-        if (e.target === lightbox) lightbox.remove();
-      };
-    });
+  const main = document.getElementById('mainPreview');
+  main.src = images[currentIndex];
+
+  // Opcional: Actualizar cuál miniatura se ve "activa"
+  const thumbnails = document.querySelectorAll('.thumbnail-gallery img');
+  thumbnails.forEach(img => img.classList.remove('active'));
+  thumbnails[currentIndex].classList.add('active');
+}
+
+// Lightbox mejorado (Click para agrandar)
+document.addEventListener("DOMContentLoaded", () => {
+  const mainImage = document.getElementById("mainPreview");
+  mainImage.addEventListener("click", () => {
+    const lightbox = document.createElement("div");
+    lightbox.classList.add("lightbox");
+    
+    // El lightbox ahora también tiene flechas
+    lightbox.innerHTML = `
+      <button class="nav-btn prev" id="lbPrev">&#10094;</button>
+      <img src="${images[currentIndex]}" id="lbImage">
+      <button class="nav-btn next" id="lbNext">&#10095;</button>
+      <span class="close-btn">&times;</span>
+    `;
+    document.body.appendChild(lightbox);
+
+    // Funcionalidad de flechas dentro del lightbox
+    const lbImage = document.getElementById("lbImage");
+    document.getElementById("lbPrev").onclick = (e) => { e.stopPropagation(); changeImage(-1); lbImage.src = images[currentIndex]; };
+    document.getElementById("lbNext").onclick = (e) => { e.stopPropagation(); changeImage(1); lbImage.src = images[currentIndex]; };
+
+    document.querySelector(".close-btn").onclick = () => lightbox.remove();
+    lightbox.onclick = (e) => { if (e.target === lightbox) lightbox.remove(); };
   });
-</script>
-<script>
+});
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  </script>
+    <script>
   window.addEventListener("scroll", () => {
     const header = document.querySelector("header");
     header.classList.toggle("scrolled", window.scrollY > 10);

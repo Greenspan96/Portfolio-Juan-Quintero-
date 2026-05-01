@@ -941,7 +941,40 @@ footer {
   flex-direction: column;
   gap: 1.5em;
 }
+.main-image {
+  position: relative; /* Necesario para posicionar las flechas */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(13, 33, 55, 0.5); /* Color oscuro semi-transparente */
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 25%;
+  transition: background 0.3s ease;
+  z-index: 10;
+}
+
+.nav-btn:hover {
+  background: rgba(13, 33, 55, 0.9);
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* Ajuste para que la imagen no se mueva */
+#mainPreview {
+  width: 100%;
+  display: block;
+}
 .main-image img {
   width: 100%;
   border-radius: 10px;
